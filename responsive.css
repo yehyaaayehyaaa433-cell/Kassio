@@ -1,0 +1,419 @@
+/* =========================================================================
+   RESPONSIVE — TABLET (768px+)
+   ========================================================================= */
+@media (min-width: 768px) {
+  .content {
+    padding: 24px;
+  }
+
+  .pos-total-value {
+    font-size: 56px;
+  }
+
+  .nav-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .reports-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================================================================
+   RESPONSIVE — DESKTOP (1024px+)
+   ========================================================================= */
+@media (min-width: 1024px) {
+
+  /* ============ إخفاء "الإدارة السريعة" من الرئيسية ============ */
+  #viewRoot .nav-grid,
+  #viewRoot .nav-grid + h2,
+  #viewRoot > div > h2[style*="quickAccess"] {
+    display: none !important;
+  }
+
+  /* ============ إخفاء أزرار الشريط العلوي العائمة ============ */
+  .topbar-actions {
+    display: none !important;
+  }
+
+  /* ============ الشريط الجانبي: يتبدل حسب اتجاه اللغة ============ */
+  .app.is-rtl .topbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    width: 260px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 16px;
+    border-bottom: none;
+    border-left: 1px solid var(--border);
+    border-right: none;
+    z-index: 100;
+    gap: 16px;
+    overflow-y: auto;
+  }
+
+  .app.is-ltr .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    width: 260px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 16px;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    border-left: none;
+    z-index: 100;
+    gap: 16px;
+    overflow-y: auto;
+  }
+
+  .app.is-rtl .content {
+    margin-right: 260px;
+    margin-left: 0;
+    padding: 32px 40px;
+    max-width: 1200px;
+  }
+
+  .app.is-ltr .content {
+    margin-left: 260px;
+    margin-right: 0;
+    padding: 32px 40px;
+    max-width: 1200px;
+  }
+
+  /* ============ تحسينات عامة ============ */
+  .topbar-brand {
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .topbar-title strong,
+  .topbar-title small {
+    max-width: 180px;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: var(--text-soft);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--t-fast);
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+
+  .sidebar-link:hover {
+    background: var(--surface-2);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .sidebar-link.active {
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 800;
+  }
+
+  .sidebar-link span {
+    flex: 1;
+  }
+
+  .sidebar-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* ============ شبكات ============ */
+  .grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .reports-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  /* ============ بطاقة النقدية ============ */
+  .cash-card {
+    padding: 40px;
+  }
+
+  .cash-value {
+    font-size: 56px;
+  }
+
+  /* ============ POS ============ */
+  .pos-wrap {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .pos-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pos-cart-side {
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+  }
+
+  .pos-total-card {
+    padding: 32px;
+    margin: 0;
+  }
+
+  .pos-total-value {
+    font-size: 56px;
+  }
+
+  .pos-main .input-wrap {
+    min-height: 56px;
+  }
+
+  .pos-main .input-wrap input {
+    font-size: 15px;
+  }
+
+  .search-results {
+    max-height: 400px;
+  }
+
+  .search-item {
+    padding: 14px 16px;
+  }
+
+  .search-item-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .search-item-body strong {
+    font-size: 14px;
+  }
+
+  .search-item-price {
+    font-size: 15px;
+  }
+
+  .cart-list {
+    gap: 10px;
+  }
+
+  .cart-item {
+    padding: 16px;
+  }
+
+  .cart-item-thumb {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .cart-item-body strong {
+    font-size: 14px;
+  }
+
+  .cart-item-qty button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cart-item-total {
+    font-size: 15px;
+    min-width: 90px;
+  }
+
+  .payment-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .payment-tab {
+    padding: 16px;
+    font-size: 14px;
+    min-height: 56px;
+    justify-content: center;
+  }
+
+  .pos-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .pos-action {
+    min-height: 90px;
+    font-size: 12px;
+    padding: 14px 8px;
+  }
+
+  .pos-action svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* ============ التقارير ============ */
+  .chart-container.tall {
+    height: 400px;
+  }
+
+  .grid-auto {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* =========================================================================
+   LARGE DESKTOP (1400px+)
+   ========================================================================= */
+@media (min-width: 1400px) {
+  .app.is-rtl .content {
+    padding: 40px 60px;
+  }
+  .app.is-ltr .content {
+    padding: 40px 60px;
+  }
+
+  .app.is-rtl .topbar {
+    width: 280px;
+  }
+  .app.is-ltr .topbar {
+    width: 280px;
+  }
+
+  .app.is-rtl .content {
+    margin-right: 280px;
+  }
+  .app.is-ltr .content {
+    margin-left: 280px;
+  }
+}
+
+/* =========================================================================
+   MOBILE SMALL (480px)
+   ========================================================================= */
+@media (max-width: 480px) {
+  .topbar-title strong,
+  .topbar-title small {
+    max-width: 100px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .cash-value {
+    font-size: 32px;
+  }
+
+  .pos-total-value {
+    font-size: 36px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-head h1 {
+    font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .btn {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  .btn-lg {
+    min-height: 48px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================================================
+   MOBILE EXTRA SMALL (390px)
+   ========================================================================= */
+@media (max-width: 390px) {
+  .topbar-title strong,
+  .topbar-title small {
+    max-width: 80px;
+  }
+
+  .pos-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+  .cart-item-total {
+    min-width: 60px;
+  }
+}
+
+/* =========================================================================
+   PRINT
+   ========================================================================= */
+@media print {
+  .topbar,
+  .pos-actions,
+  .payment-tabs,
+  .modal-backdrop,
+  .toast-wrap {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
